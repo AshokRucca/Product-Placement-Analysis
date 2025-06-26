@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALES - About</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            min-height: 100vh; /* Ensure body takes full height */
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-link {
+            @apply text-white hover:text-yellow-500 transition-colors duration-200 px-4 py-2 rounded-md;
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .gradient-button {
+            @apply bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-6 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105;
+        }
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 72px; /* Adjust based on navbar height */
+                left: 0;
+                width: 100%;
+                background-color: #1a1a1a;
+                padding: 1rem 0;
+                z-index: 10;
+            }
+            .navbar-menu.active {
+                display: flex;
+            }
+            .navbar-link {
+                padding: 0.75rem 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-90 shadow-lg z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-white text-2xl font-bold">SALES</a>
+            <div class="hidden md:flex space-x-6 navbar-menu">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="dashboard.html" class="navbar-link">Dashboard</a>
+                <a href="story.html" class="navbar-link">Story</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+            <a href="about.html" class="gradient-button ml-4 md:ml-0">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-black text-white pt-24 md:pt-32 flex-grow">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <h2 class="text-yellow-500 text-lg font-semibold mb-2">ABOUT</h2>
+                <h3 class="text-4xl font-bold mb-6">The Project Involves</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-start">
+                        <span class="mr-2 text-yellow-500">&#10003;</span>
+                        Data collection is the process of gathering and measuring information on variables of interest, in an established systematic fashion that enables one to answer stated research questions, test hypothesis, and evaluate outcomes and generate insights from the data.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-yellow-500">&#10003;</span>
+                        Data preparation is the process of cleaning, transforming, and organizing data in order to make it suitable for analysis. It is an important step in the data analysis process, as the quality of the data used can have a significant impact on the accuracy and reliability of the results.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2 text-yellow-500">&#10003;</span>
+                        Data visualization is the process of creating graphical representations of data in order to help people understand and explore the information. The goal of data visualization is to make complex data sets more accessible, intuitive, and easier to interpret. By using visual elements such as charts, graphs, and maps, data visualizations can help people quickly identify patterns, trends, and outliers in the data.
+                    </li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="./Assests/photo-1578916171728-46686eac8d58.jpg" alt="About Us" class="rounded-lg shadow-xl w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (consistent across all pages) -->
+    <footer class="bg-black text-gray-400 py-8 text-center mt-auto">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 SALES. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const navbarMenu = document.querySelector('.navbar-menu');
+
+        menuButton.addEventListener('click', () => {
+            navbarMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
